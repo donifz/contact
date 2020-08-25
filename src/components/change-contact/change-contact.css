@@ -1,0 +1,45 @@
+.change-contact .contact__preview {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+}
+.change-contact .contact__preview .preview__photo {
+  margin-right: 26px;
+  border-radius: 6px;
+}
+
+.change-contact form {
+  margin-top: 15px;
+  display: flex;
+}
+
+.change-contact form input {
+  border: 1px solid rgba(33, 33, 33, 0.35);
+  border-radius: 2px;
+  width: 289px;
+  height: 40px;
+}
+.change-contact form p {
+  margin-bottom: 6px;
+}
+.change-contact form .first__block {
+  margin-right: 43px;
+}
+.change-contact form input[type="submit"] {
+  width: 289px;
+  height: 40px;
+  background: #212121;
+  border-radius: 2px;
+  color: white;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #ffffff;
+}
+.change-contact .preview__photo {
+  max-height: 150px;
+}

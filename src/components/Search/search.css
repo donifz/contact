@@ -1,0 +1,20 @@
+.search {
+  width: 551px;
+}
+
+.search__input {
+  height: 40px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(33, 33, 33, 0.35);
+  border-radius: 2px;
+  display: flex;
+  padding-left: 16px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+
+  color: rgba(33, 33, 33, 0.5);
+}

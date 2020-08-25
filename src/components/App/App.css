@@ -1,0 +1,25 @@
+.app-container {
+  max-width: 1160px;
+
+  margin: 0 auto;
+}
+.filters {
+  width: 100%;
+  margin: 47px auto;
+  margin-bottom: 31px;
+  display: flex;
+  justify-content: space-between;
+}
+.fav-sort {
+  display: flex;
+}
+.contacts__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 3rem;
+  margin-top: 30px;
+}
+.heart {
+  stroke: green;
+  fill: green;
+}

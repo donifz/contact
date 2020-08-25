@@ -1,0 +1,84 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: 1px 1px 3px rgba(33, 33, 33, 0.25);
+  border-radius: 4px;
+  height: 303px;
+}
+.card__body {
+  position: relative;
+  height: 100%;
+}
+.card__wrap {
+  padding: 11px 8px;
+  height: 100%;
+}
+.card .card__photo {
+  border-radius: 4px 4px 0 0;
+  flex-grow: 1;
+  object-fit: cover;
+  max-height: 134px;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+}
+.card__name {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.card__header svg {
+  width: 18px;
+  height: 18px;
+
+  fill: white;
+  stroke: black;
+  cursor: pointer;
+  stroke-width: 2px;
+}
+.card__header svg:hover {
+  fill: #d32f2f;
+  stroke: none;
+}
+.card__info {
+  margin-bottom: 17px;
+}
+
+.card__info li img {
+  margin-right: 6px;
+}
+.card__info li span {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+
+  color: #000000;
+}
+.card__btn {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+  color: #ffffff;
+
+  border: none;
+  padding: 4px 30px;
+  background: #212121;
+  border-radius: 2px;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
