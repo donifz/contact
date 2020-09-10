@@ -8,24 +8,21 @@ import Contacts from "../Contacts/contacts";
 import ChangeContact from "../change-contact/change-contact";
 import { useSelector, useDispatch } from "react-redux";
 import { userAPI } from "../../redux/API";
+import { setAllData } from "../../redux/actions";
 
 const App = () => {
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
   let listId;
-  const getIdContact = (id) => {
-    listId = id;
-    console.log(listId);
-  };
-
+  const dispatch = useDispatch();
   useEffect(() => {
     userAPI.saveToStorage();
-    setData(allData);
-  });
+    const allData = JSON.parse(localStorage.getItem("userStorage"));
+    dispatch(setAllData(allData));
+    console.log(allData);
+  }, []);
 
-  const allData = useSelector((item) => item.reducer1);
-
-  const dispatch = useDispatch();
-
+  const data = useSelector((item) => item.reducer1.items);
+  // console.log(allData);
   return (
     <BrowserRouter>
       <div className="App">
@@ -33,18 +30,12 @@ const App = () => {
 
         <div className="app-container">
           <Switch>
+            <Route path={`/`} exact render={() => <Contacts list={data} />} />
             <Route
-              path={`/`}
+              path={`/change/:id`}
               exact
-              render={() => (
-                <Contacts list={data} getIdContact={getIdContact} />
-              )}
-            />
-            <Route
-              path={`/change:${listId}`}
-              exact
-              render={() => (
-                <ChangeContact changeId={listId} changeData={data} />
+              render={(props) => (
+                <ChangeContact changeId={props} changeData={data} />
               )}
             />
           </Switch>

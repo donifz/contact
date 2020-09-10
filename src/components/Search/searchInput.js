@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./search.css";
 import { useSelector, useDispatch } from "react-redux";
 import { filt } from "../../redux/actions";
-import { incre } from "../../redux/actions";
+
 const SearchInput = (props) => {
   // console.log(props.data);
   const [filter, setFilter] = useState("");
@@ -12,7 +12,7 @@ const SearchInput = (props) => {
   });
 
   const dispatch = useDispatch();
-  const all = useSelector((item) => item.reducer1);
+  const all = useSelector((item) => item.filter);
   const filterHand = () => {
     text.current.focus();
     dispatch(filt(text.current.value));

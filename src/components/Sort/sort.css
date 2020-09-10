@@ -1,3 +1,13 @@
-.sort img {
+.sort svg {
   margin: 0 8px;
+  cursor: pointer;
 }
+.sortActive {
+  stroke: black;
+  stroke-width: 1;
+  fill: black;
+}
+
+/* .sort svg g path {
+  fill: black;
+} */

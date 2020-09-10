@@ -9,8 +9,9 @@ export const userAPI = {
     return fetchData.get(`users`).then((response) => response.data);
   },
   saveToStorage() {
-    return this.getUsers().then((res) =>
-      localStorage.setItem("userStorage", JSON.stringify(res.data))
+    return this.getUsers().then(
+      (res) =>
+        localStorage.setItem("userStorage", JSON.stringify(res.data)) || []
     );
   },
 };

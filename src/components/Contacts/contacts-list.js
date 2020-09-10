@@ -7,8 +7,16 @@ import tel from "./img/tel.svg";
 import web from "./img/internet.svg";
 import mail from "./img/mail.svg";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { favor } from "../../redux/actions";
 
 const ContactsList = (props) => {
+  // const [heart, setheart] = React.useState(false);
+  const dispatch = useDispatch();
+  const favoriteBtn = (id) => {
+    dispatch(favor(id));
+  };
+
   const {
     id,
     phoneNumber,
@@ -31,6 +39,7 @@ const ContactsList = (props) => {
               {firstName} {lastName} {id}
             </span>
             <svg
+              onClick={() => favoriteBtn(id)}
               width="18"
               height="17"
               viewBox="0 0 70 66"
@@ -60,10 +69,8 @@ const ContactsList = (props) => {
               <span>{email}</span>
             </li>
           </ul>
-          <Link to={`/change:${id}`}>
-            <button className="btn card__btn" onClick={() => props.giveId(id)}>
-              show
-            </button>
+          <Link to={`/change/${id}`}>
+            <button className="btn card__btn">show</button>
           </Link>
         </div>
       </div>

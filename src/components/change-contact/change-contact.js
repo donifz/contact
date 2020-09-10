@@ -8,61 +8,62 @@ const ChangeContact = (props) => {
   // let newId = data.filter((item) => item.id == id);
   // const [info, setInfo] = useState({});
 
-  let newID = props.changeData.filter((item) => item.id == props.changeId);
+  let newID = props.changeData.filter(
+    (item) => item.id == props.changeId.match.params.id
+  );
   // setInfo(newID);
 
-  return (
-    <div className="change-contact">
-      <div className="contact__preview">
-        <img className="preview__photo" src={newID[0].image} />
-        <img src={heart} />
+  return newID.map((item) => {
+    return (
+      <div className="change-contact" key={item.id}>
+        <div className="contact__preview">
+          <img className="preview__photo" src={item.image} />
+          <img src={heart} />
+        </div>
+        <form>
+          <div className="first__block">
+            <label>
+              <p>First name:</p>
+              <input className="change__input" defaultValue={item.firstName} />
+            </label>
+            <label>
+              <p>City:</p>
+              <input className="change__input" defaultValue={item.city} />
+            </label>
+            <label>
+              <p>Phone Number:</p>
+              <input
+                className="change__input"
+                defaultValue={item.phoneNumber}
+              />
+            </label>
+            <label>
+              <p>Website:</p>
+              <input className="change__input" defaultValue={item.website} />
+            </label>
+          </div>
+          <div className="second__block">
+            <label>
+              <p>Last name:</p>
+              <input className="change__input" defaultValue={item.lastName} />
+            </label>
+            <label>
+              <p>Country:</p>
+              <input className="change__input" defaultValue={item.country} />
+            </label>
+            <label>
+              <p>Email:</p>
+              <input className="change__input" defaultValue={item.email} />
+            </label>
+            <label>
+              <p>.</p>
+              <input className="btn" type="submit" value="Save Contact" />
+            </label>
+          </div>
+        </form>
       </div>
-      <form>
-        <div className="first__block">
-          <label>
-            <p>First name:</p>
-            <input
-              className="change__input"
-              defaultValue={newID[0].firstName}
-            />
-          </label>
-          <label>
-            <p>City:</p>
-            <input className="change__input" defaultValue={newID[0].city} />
-          </label>
-          <label>
-            <p>Phone Number:</p>
-            <input
-              className="change__input"
-              defaultValue={newID[0].phoneNumber}
-            />
-          </label>
-          <label>
-            <p>Website:</p>
-            <input className="change__input" defaultValue={newID[0].website} />
-          </label>
-        </div>
-        <div className="second__block">
-          <label>
-            <p>Last name:</p>
-            <input className="change__input" defaultValue={newID[0].lastName} />
-          </label>
-          <label>
-            <p>Country:</p>
-            <input className="change__input" defaultValue={newID[0].country} />
-          </label>
-          <label>
-            <p>Email:</p>
-            <input className="change__input" defaultValue={newID[0].email} />
-          </label>
-          <label>
-            <p>.</p>
-            <input className="btn" type="submit" value="Save Contact" />
-          </label>
-        </div>
-      </form>
-    </div>
-  );
+    );
+  });
 };
 
 export default ChangeContact;
