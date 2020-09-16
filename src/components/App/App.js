@@ -12,7 +12,6 @@ import { setAllData } from "../../redux/actions";
 
 const App = () => {
   // const [data, setData] = useState([]);
-  let listId;
   const dispatch = useDispatch();
   useEffect(() => {
     userAPI.saveToStorage();
@@ -22,7 +21,7 @@ const App = () => {
   }, []);
 
   const data = useSelector((item) => item.reducer1.items);
-  // console.log(allData);
+  console.log(data);
   return (
     <BrowserRouter>
       <div className="App">
@@ -30,7 +29,11 @@ const App = () => {
 
         <div className="app-container">
           <Switch>
-            <Route path={`/`} exact render={() => <Contacts list={data} />} />
+            <Route
+              path={`/contact`}
+              exact
+              render={() => <Contacts list={data} />}
+            />
             <Route
               path={`/change/:id`}
               exact
