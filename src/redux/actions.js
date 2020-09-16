@@ -30,3 +30,13 @@ export const favor = (id) => {
     payload: id,
   };
 };
+
+export const change = (id, info) => {
+  return {
+    type: "CHANGECONTACT",
+    payload: {
+      id,
+      info,
+    },
+  };
+};
